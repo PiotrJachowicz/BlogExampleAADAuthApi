@@ -4,9 +4,6 @@ const cors = require('cors');
 const http = require('http');
 
 app.use(cors());
-app.configure(function () {
-  app.set('port', process.env.PORT || 3000);
-});
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -14,6 +11,6 @@ app.get('/', (req, res) => {
 
 var server = http.createServer(app);
 
-server.listen(app.get('port'), function () {
-  console.log("Express server listening on port " + app.get('port'));
+server.listen(process.env.PORT || 3000, function () {
+  console.log(`Express server listening on port ${process.env.PORT || 3000}`);
 });
