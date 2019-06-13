@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const http = require('http');
+const authMiddleware = require('./azureAuthenticationMiddleware.js');
 
+app.use(authMiddleware);
 app.use(cors());
 
 app.get('/', (req, res) => {
