@@ -8,7 +8,7 @@ app.use(cors());
 app.use(authMiddleware);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send({message: 'Hello World!'});
 });
 
 var server = http.createServer(app);
